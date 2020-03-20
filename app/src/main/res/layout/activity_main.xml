@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <WebView
+        android:id="@+id/webview"
+        android:layout_width="409dp"
+        android:layout_height="587dp"
+        android:layout_marginTop="148dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/syote"
+        android:layout_width="214dp"
+        android:layout_height="49dp"
+        android:layout_marginBottom="72dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/webview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Syötä osoite"
+        app:layout_constraintBottom_toTopOf="@+id/syote"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/hae_nappi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="Hae"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/syote"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/paivita"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="Päivitä"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/hae_nappi"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/shoutout_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Shout Out!"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/syote" />
+
+    <Button
+        android:id="@+id/initialize_nappi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TAKE IT BACK"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/shoutout_button"
+        app:layout_constraintTop_toBottomOf="@+id/syote" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
