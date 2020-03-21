@@ -76,4 +76,20 @@
         app:layout_constraintStart_toEndOf="@+id/shoutout_button"
         app:layout_constraintTop_toBottomOf="@+id/syote" />
 
+    <Button
+        android:id="@+id/edellinen_nappi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="EDELLINEN"
+        app:layout_constraintStart_toEndOf="@+id/initialize_nappi"
+        app:layout_constraintTop_toBottomOf="@+id/hae_nappi" />
+
+    <Button
+        android:id="@+id/seuraava_nappi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SEURAAVA"
+        app:layout_constraintStart_toEndOf="@+id/edellinen_nappi"
+        app:layout_constraintTop_toBottomOf="@+id/paivita" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
