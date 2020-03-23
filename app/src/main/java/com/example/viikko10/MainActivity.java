@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<String> osoite = new ArrayList<>(); //Lista johon tallennetaan käyttäjän syöttämä osoite
     ArrayList<String> edellinen = new ArrayList<>(); //Lista johon tallenetaan käyttäjän edellinen osoite
     ArrayList<String> seuraava = new ArrayList<>(); //Lista johon tulee "seuraava osoite"
+    int laskija_edellinen = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,14 +47,19 @@ public class MainActivity extends AppCompatActivity {
                     web.loadUrl("file:///android_asset/index.html");
                     osoite.add("file:///android_asset/index.html");
                     edellinen.add(url);
+                    laskija_edellinen ++;
                     seuraava.clear();
                 }else{
                     url = "http://" + url;
                     osoite.add(url);
                     int vika = osoite.size() - 1;
                     edellinen.add(url);
+                    laskija_edellinen ++;
                     web.loadUrl(osoite.get(vika));
                     seuraava.clear();
+                }
+                if(laskija_edellinen > 10){
+                    edellinen.remove(0);
                 }
             }
         });
