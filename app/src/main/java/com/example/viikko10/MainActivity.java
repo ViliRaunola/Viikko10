@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<String> osoite = new ArrayList<>(); //Lista johon tallennetaan käyttäjän syöttämä osoite
     ArrayList<String> edellinen = new ArrayList<>(); //Lista johon tallenetaan käyttäjän edellinen osoite
     ArrayList<String> seuraava = new ArrayList<>(); //Lista johon tulee "seuraava osoite"
+    String tamanhetikinen;
     int laskija_edellinen = 0;
 
     @Override
@@ -49,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
                     edellinen.add(url);
                     laskija_edellinen ++;
                     seuraava.clear();
+                    tamanhetikinen = "file:///android_asset/index.html";
                 }else{
                     url = "http://" + url;
                     osoite.add(url);
@@ -57,8 +59,9 @@ public class MainActivity extends AppCompatActivity {
                     laskija_edellinen ++;
                     web.loadUrl(osoite.get(vika));
                     seuraava.clear();
+                    tamanhetikinen = url;
                 }
-                if(laskija_edellinen > 10){
+                if(laskija_edellinen > 11){
                     edellinen.remove(0);
                 }
             }
@@ -67,7 +70,8 @@ public class MainActivity extends AppCompatActivity {
         paivita_nappi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                web.loadUrl(osoite.get(osoite.size() - 1));
+                web.loadUrl(tamanhetikinen);
+
                 Toast.makeText(getApplicationContext(), "Sivusto päivitetty", Toast.LENGTH_SHORT).show();
             }
         });
@@ -99,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
                         vika = edellinen.size() - 1;
                         String url = edellinen.get(vika);
                         seuraava.add(temp);
+                        tamanhetikinen = url;
                         if (url.equals("index.html")) {
                             web.loadUrl("file:///android_asset/index.html");
                         }else{
@@ -120,6 +125,7 @@ public class MainActivity extends AppCompatActivity {
                     String url = seuraava.get(seuraava.size() - 1);
                     edellinen.add(seuraava.get(seuraava.size() - 1));
                     seuraava.remove(seuraava.size() - 1);
+                    tamanhetikinen = url;
                     if (url.equals("index.html")) {
                         web.loadUrl("file:///android_asset/index.html");
                     }else{
